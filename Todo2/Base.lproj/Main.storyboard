@@ -15,7 +15,7 @@
         <!--All Tasks-->
         <scene sceneID="ljQ-DZ-Q1I">
             <objects>
-                <tableViewController id="E5N-Bc-VPh" sceneMemberID="viewController">
+                <tableViewController id="E5N-Bc-VPh" customClass="TodoTableViewController" customModule="Todo2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="geu-qz-6QO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,7 +48,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aEX-OY-Icy">
                             <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="poO-jT-bhu" kind="presentation" id="0Ef-S9-Ffq"/>
+                                <segue destination="poO-jT-bhu" kind="presentation" identifier="ShowAddTodo" id="0Ef-S9-Ffq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="1100" y="276.61169415292358"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Todo View Controller-->
         <scene sceneID="GLl-zz-smt">
             <objects>
-                <viewController id="poO-jT-bhu" sceneMemberID="viewController">
+                <viewController id="poO-jT-bhu" customClass="AddTodoViewController" customModule="Todo2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aoN-Cn-WRd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,6 +83,9 @@
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="28"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="poO-jT-bhu" id="ffj-Oa-MGG"/>
+                                        </connections>
                                     </textView>
                                 </subviews>
                             </stackView>
@@ -102,7 +105,7 @@
                                         <rect key="frame" x="0.0" y="36" width="343" height="36"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnv-vo-Ygg">
-                                                <rect key="frame" x="0.0" y="0.0" width="70" height="36"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="36"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="sci-Z7-KGL"/>
@@ -111,14 +114,20 @@
                                                 <state key="normal" title="Cancel">
                                                     <color key="titleColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="cancel:" destination="poO-jT-bhu" eventType="touchUpInside" id="pxW-nT-bMr"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="245" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="608-xT-dz9">
-                                                <rect key="frame" x="78" y="0.0" width="265" height="36"/>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="245" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="608-xT-dz9">
+                                                <rect key="frame" x="-16" y="0.0" width="0.0" height="36"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                                 <state key="normal" title="Done">
                                                     <color key="titleColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="done:" destination="poO-jT-bhu" eventType="touchUpInside" id="Btm-Ot-sfb"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -143,6 +152,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MS2-Xc-LVj"/>
                     </view>
+                    <connections>
+                        <outlet property="doneButton" destination="608-xT-dz9" id="bii-yd-TxW"/>
+                        <outlet property="segmentedControl" destination="3oi-PP-Cm7" id="ZKN-gQ-075"/>
+                        <outlet property="textView" destination="E1b-qt-0yu" id="R0B-Hx-vce"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="geF-Zi-J4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

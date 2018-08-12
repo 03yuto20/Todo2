@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		492E901F211FEEE500F4CA9E /* AddTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492E901E211FEEE500F4CA9E /* AddTodoViewController.swift */; };
+		492E9021211FEF0300F4CA9E /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492E9020211FEF0300F4CA9E /* TodoTableViewController.swift */; };
 		4960EA54211FD31A0074A21A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4960EA53211FD31A0074A21A /* AppDelegate.swift */; };
 		4960EA56211FD31A0074A21A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4960EA55211FD31A0074A21A /* ViewController.swift */; };
 		4960EA59211FD31A0074A21A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4960EA57211FD31A0074A21A /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		492E901E211FEEE500F4CA9E /* AddTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewController.swift; sourceTree = "<group>"; };
+		492E9020211FEF0300F4CA9E /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
 		4960EA50211FD31A0074A21A /* Todo2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todo2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4960EA53211FD31A0074A21A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4960EA55211FD31A0074A21A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		492E901D211FEEB500F4CA9E /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				492E901E211FEEE500F4CA9E /* AddTodoViewController.swift */,
+				492E9020211FEF0300F4CA9E /* TodoTableViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
 		4960EA47211FD31A0074A21A = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +110,7 @@
 		4960EA52211FD31A0074A21A /* Todo2 */ = {
 			isa = PBXGroup;
 			children = (
+				492E901D211FEEB500F4CA9E /* VC */,
 				4960EA53211FD31A0074A21A /* AppDelegate.swift */,
 				4960EA55211FD31A0074A21A /* ViewController.swift */,
 				4960EA57211FD31A0074A21A /* Main.storyboard */,
@@ -257,6 +271,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4960EA56211FD31A0074A21A /* ViewController.swift in Sources */,
+				492E9021211FEF0300F4CA9E /* TodoTableViewController.swift in Sources */,
+				492E901F211FEEE500F4CA9E /* AddTodoViewController.swift in Sources */,
 				4960EA54211FD31A0074A21A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
