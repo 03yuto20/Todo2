@@ -29,12 +29,18 @@ class AddTodoViewController: UIViewController {
         )
     }
 
-    
     //MARK: Actions
     @objc func keyboardWillShow(with notification: Notification) {
-        guard let keyboardFrame = notification.userInfo?[""] as? NSValue else {return}
+        let key = "UIKeyboardFrameEndUserInfoKey"
+        guard let keyboardFrame = notification.userInfo?[key] as? NSValue else {return}
         
         let keyboardHeight = keyboardFrame.cgRectValue.height
+        
+        bottomConstrint.constant = keyboardHeight
+        
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
         
     }
     

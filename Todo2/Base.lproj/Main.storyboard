@@ -153,6 +153,7 @@
                         <viewLayoutGuide key="safeArea" id="MS2-Xc-LVj"/>
                     </view>
                     <connections>
+                        <outlet property="bottomConstrint" destination="k6y-KJ-FTC" id="aRC-Mr-01E"/>
                         <outlet property="doneButton" destination="608-xT-dz9" id="bii-yd-TxW"/>
                         <outlet property="segmentedControl" destination="3oi-PP-Cm7" id="ZKN-gQ-075"/>
                         <outlet property="textView" destination="E1b-qt-0yu" id="R0B-Hx-vce"/>
