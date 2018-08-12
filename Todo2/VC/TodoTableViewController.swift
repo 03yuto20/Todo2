@@ -37,7 +37,7 @@ class TodoTableViewController: UITableViewController {
             //TODO: Delete todo
             completion(true)
         }
-        action.image = #imageLiteral(resourceName: "Trash")
+        action.image = #imageLiteral(resourceName: "trash")
         action.backgroundColor = .red
         
         return UISwipeActionsConfiguration(actions: [action])
@@ -48,7 +48,7 @@ class TodoTableViewController: UITableViewController {
             //TODO: Delete todo
             completion(true)
         }
-        action.image = #imageLiteral(resourceName: "Check")
+        action.image = #imageLiteral(resourceName: "check")
         action.backgroundColor = .green
         
         return UISwipeActionsConfiguration(actions: [action])
