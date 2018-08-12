@@ -27,6 +27,9 @@ class AddTodoViewController: UIViewController {
             name: .UIKeyboardWillShow,
             object: nil
         )
+        
+        textView.becomeFirstResponder()
+        
     }
 
     //MARK: Actions
@@ -46,6 +49,7 @@ class AddTodoViewController: UIViewController {
     
     @IBAction func cancel(_ sender: UIButton) {
         dismiss(animated: true)
+        textView.resignFirstResponder()
     }
     
     
@@ -63,4 +67,19 @@ class AddTodoViewController: UIViewController {
     }
     */
 
+}
+
+extension AddTodoViewController: UITextViewDelegate {
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        if doneButton.isHidden {
+            textView.text.removeAll()
+            textView.textColor = .white
+            
+            doneButton.isHidden = false
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
 }
