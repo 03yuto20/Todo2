@@ -54,6 +54,7 @@ class AddTodoViewController: UIViewController {
     
     
     @IBAction func done(_ sender: Any) {
+        dismiss(animated: true)
     }
     
 
