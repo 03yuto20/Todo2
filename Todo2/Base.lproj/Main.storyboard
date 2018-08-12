@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -147,7 +146,7 @@
                             <constraint firstItem="MS2-Xc-LVj" firstAttribute="bottom" secondItem="8yf-qd-RyM" secondAttribute="bottom" id="bC4-3M-323"/>
                             <constraint firstItem="MIA-hp-ypf" firstAttribute="height" secondItem="aoN-Cn-WRd" secondAttribute="height" multiplier="0.4" id="dCt-d9-ohn"/>
                             <constraint firstItem="MIA-hp-ypf" firstAttribute="top" secondItem="MS2-Xc-LVj" secondAttribute="top" id="jXX-xq-zQ3"/>
-                            <constraint firstItem="8yf-qd-RyM" firstAttribute="bottom" secondItem="aoN-Cn-WRd" secondAttribute="bottomMargin" id="k6y-KJ-FTC"/>
+                            <constraint firstItem="8yf-qd-RyM" firstAttribute="bottom" secondItem="aoN-Cn-WRd" secondAttribute="bottom" id="k6y-KJ-FTC"/>
                             <constraint firstItem="8yf-qd-RyM" firstAttribute="leading" secondItem="MS2-Xc-LVj" secondAttribute="leading" constant="16" id="vOT-s4-FbP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MS2-Xc-LVj"/>

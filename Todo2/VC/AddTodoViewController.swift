@@ -34,7 +34,7 @@ class AddTodoViewController: UIViewController {
         let key = "UIKeyboardFrameEndUserInfoKey"
         guard let keyboardFrame = notification.userInfo?[key] as? NSValue else {return}
         
-        let keyboardHeight = keyboardFrame.cgRectValue.height
+        let keyboardHeight = keyboardFrame.cgRectValue.height + 16
         
         bottomConstrint.constant = keyboardHeight
         
