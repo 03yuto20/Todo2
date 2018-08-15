@@ -7,12 +7,26 @@
 //
 
 import UIKit
+import CoreData
 
 class TodoTableViewController: UITableViewController {
-
+    
+    //MARK: - Properties
+    
+    var resultsController: NSFetchedResultsController<Todo>!
+    let coreDataStack = CoreDataStack()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let request: NSFetchRequest<Todo> = Todo.fetchRequest()
+        let sortDescriptors = NSSortDescriptor(key: "date", ascending: true)
+        request.sortDescriptors = [sortDescriptors]
+        resultsController = NSFetchedResultsController(
+            fetchRequest: request,
+            managedObjectContext: coreDataStack.managedContext,
+            sectionNameKeyPath: nil,
+            cacheName: nil
+        )
 
     }
 
