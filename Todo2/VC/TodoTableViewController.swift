@@ -72,6 +72,8 @@ class TodoTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .destructive, title: "Check") { (action, view, completion) in
             //TODO: Delete todo
+            let todo = self.resultsController.object(at: indexPath)
+            self.resultsController.managedObjectContext.delete(todo)
             completion(true)
         }
         action.image = #imageLiteral(resourceName: "check")
@@ -85,7 +87,7 @@ class TodoTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let _ = sender as? UIBarButtonItem, let vc = segue.destination as? AddTodoViewController {
-            vc.managedContext = coreDataStack.managedContext
+            vc.managedContext = resultsController.managedObjectContext
         }
     }
 }
@@ -105,6 +107,10 @@ extension TodoTableViewController: NSFetchedResultsControllerDelegate {
         case .insert:
             if let indexPath = newIndexPath {
                 tableView.insertRows(at: [indexPath], with: .automatic)
+            }
+        case .delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .automatic)
             }
         default:
             break
